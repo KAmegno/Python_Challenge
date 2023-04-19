@@ -2,7 +2,9 @@ import os
 
 import csv
 
+#Paths to read date and write analysis output to txt
 py_bank_csv_path = os.path.join(os.path.dirname(__file__), 'Resources', 'budget_data.csv')
+financial_analysis_txt_path = os.path.join(os.path.dirname(__file__), 'analysis', 'financial_analysis.txt')
 
 #Define function and have it accept the budget data as its sole parameter knowing that #month = str(csvreader[0]) and profit_losses = int(csvreader[1]) 
 count = 0 
@@ -42,7 +44,7 @@ with open(py_bank_csv_path, 'r') as csvfile:
     #Print each result of the analysis 
     print("_________________________________________________")
     print("Financial Analysis")
-    #changes.pop(0)
+    print("_________________________________________________")
     print("Total Months:", count)
     print(f"Total:  ${net_amount}")
     print(f"Average change: ${round(sum(changes)/(count -1),2)}")
@@ -52,21 +54,15 @@ with open(py_bank_csv_path, 'r') as csvfile:
 
 
 #Writing the results into analysis text file 
-#file = open(Financial_Analysis.text, "w") 
-
-#file.write(
-#file.write 'Financial Analysis\n'
-
-#)
-
-
-
-
-
-
+with open(financial_analysis_txt_path, 'w') as txtfile:
+    txtfile.write("_________________________________________________\n")
+    txtfile.write("Financial Analysis\n")
+    print("_________________________________________________\n")
+    txtfile.write(f"Total Months: {(count)}\n")
+    txtfile.write(f"Total:  ${net_amount}\n")
+    txtfile.write(f"Average change: ${round(sum(changes)/(count -1),2)}\n")
+    txtfile.write(f"Greatest increase in profits: {greatest_date}, (${greatest_increase})\n")
+    txtfile.write(f"Greatest decrease in profits: {greatest_decrease_date}, (${greatest_decrease})\n")
+    txtfile.write("_________________________________________________\n")
 
 
-
-#csvpath = "C:\Users\v.k.a\um\homework\03-python\Python_Challenge\PyBank\Resources\budget_data.csv))"
-#csvpath = os.path.join("C:\\Users\\v.k.a\\um\\homework\\03-python\\Python_Challenge\\PyBank\\Resources\\budget_data.csv")
-#with open(csvpath, encoding='utf') as csvfile:
