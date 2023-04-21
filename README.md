@@ -22,9 +22,9 @@ Here, I analyzed an election data and the results were 369711 votes casted;
  the 2 runner ups were: 
 
  Charles Casper Stockham: 23.049% (85213)
- 
+
  and Raymon Anthony Doane: 3.139% (11606)
 
 
 
-
+Worked with a TA and Jo Ann Millegan on the homework. Also received assistance from Aaron in Slack. 
